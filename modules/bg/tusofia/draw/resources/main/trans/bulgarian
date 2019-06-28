@@ -1,0 +1,86 @@
+language.name=Български
+
+general.remove=Премахни
+general.success=Успешна операция
+general.failure=Неуспешна операция
+
+login.headers.title=Вход
+login.labels.username=Потребителско име или имейл адрес
+login.input.username=Въведете потребителско име или имейл адрес
+login.labels.password=Парола
+login.input.password=Въведете парола
+login.button.login=Вход
+login.button.forgottenpassword=Забравена парола
+login.text.or=или
+
+languages.header.title=Език
+languages.text.currlangis=В момента избраният език е
+
+index.header.title=Начална страница
+
+imgprev.header.title=Преглед на изображене
+
+footer.about=За нас
+footer.language=Език
+footer.home=Начална страница
+footer.login=Вход
+footer.logout=Изход
+footer.registration=Регистрация
+
+registration.headers.title=Регистрация
+registration.labels.username=Потребителско име
+registration.input.username=Въведете потребителско име
+registration.labels.password=Парола
+registration.input.password=Въведете парола
+registration.error.password=Поне една голяма, малка буква и цифра
+registration.labels.email=Имейл адрес
+registration.input.email=Въведете имейл адрес
+registration.labels.question=Таен въпрос
+registration.input.question=Въведете отговор
+registration.button.register=Създаване на акаунт
+registration.labels.fname=Име
+registration.input.fname=Въведете име
+registration.labels.lname=Фамилия
+registration.input.lname=Въвдете фамилия
+registration.labels.age=Години
+registration.input.age=Въведете години
+registration.error.validation=Някои от полетата не са валидни
+registration.error.dupe=Този имейл или потребителско име са заети
+registration.error.general=Моля опитайте по-късно
+
+fp.headers.title=Забравена парола
+fp.text.sendmail=Нова парола беше изпратена
+
+offer.input.looking=Търся
+offer.input.worker=работници
+offer.input.work=работа
+offer.input.styles=Стилове
+offer.input.description=Кратко описание
+offer.button.createoffer=Съзадай обява
+offer.button.search=Търси
+offer.text.yours=Активните обяви
+offer.text.hires=Наема
+offer.text.creates=Създава
+offer.input.type=Тип
+offer.input.user=Потребител
+
+about.headers.title=За нас
+about.description=Пламен Прангов<br>2017-2019<br>Всички права запазени.
+
+up.text.hi=Здравей, 
+up.button.save=Запази
+up.text.desc.title=Oписание
+
+upload.label.img=Избери изображения
+upload.input.tags=Тагове разделени с празно място или запетая
+upload.input.img=Качи всички
+
+search.input.tags=Тагове разделени с празно място или запетая
+search.input.img=Търси
+
+m-menu.input.index=Начало
+m-menu.input.upload=Качи изображения
+m-menu.input.search=Търси
+m-menu.input.checkoffer=Търси обява
+m-menu.input.regoffer=Направи обява
+m-menu.input.back-to-profile=Обратно към профила

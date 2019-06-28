@@ -1,0 +1,86 @@
+language.name=English (US)
+
+general.remove=Remove
+general.success=Successful
+general.failure=Failure
+
+login.headers.title=Login
+login.labels.username=Username or email address
+login.input.username=Enter an username or email address
+login.labels.password=Password
+login.input.password=Enter a password
+login.button.login=Login
+login.button.forgottenpassword=Forgotten Password
+login.text.or=or
+
+languages.header.title=Language
+languages.text.currlangis=The current language is 
+
+index.header.title=Home
+
+imgprev.header.title=Image preview
+
+footer.about=About Us
+footer.language=Language
+footer.home=Home
+footer.login=Login
+footer.logout=Logout
+footer.registration=Registration
+
+registration.headers.title=Registration
+registration.labels.username=Username
+registration.input.username=Enter an username
+registration.labels.password=Password
+registration.input.password=Enter a password
+registration.error.password=At least one upper letter, lower letter and a digit
+registration.labels.email=Email
+registration.input.email=Enter an email
+registration.labels.question=Secret Question
+registration.input.question=Enter an answer
+registration.button.register=Create Account
+registration.labels.fname=First name
+registration.input.fname=Enter your name
+registration.labels.lname=Last name
+registration.input.lname=Enter your last name
+registration.labels.age=Age
+registration.input.age=Enter your age
+registration.error.validation=Validation of the fields failed
+registration.error.dupe=The user or email is already taken
+registration.error.general=Please try again later
+
+fp.headers.title=Forgotten password
+fp.text.sendmail=A new password was send;
+
+offer.input.looking=Looking for
+offer.input.worker=worker
+offer.input.work=work
+offer.input.styles=Styles
+offer.input.description=Description
+offer.button.createoffer=Create An Offer
+offer.button.search=Search
+offer.text.yours=Active offers
+offer.text.hires=Hires
+offer.text.creates=Creates
+offer.input.type=Type
+offer.input.user=User
+
+about.headers.title=About us
+about.description=Plamen Prangov<br>2017-2019<br>All rights reserved
+
+up.text.hi=Hi, 
+up.button.save=Save
+up.text.desc.title=Description
+
+upload.label.img=Choose images...
+upload.input.tags=Write comma or space separated tags
+upload.input.img=Upload all
+
+search.input.tags=Write comma or space separated tags
+search.input.img=Search
+
+m-menu.input.index=Index
+m-menu.input.upload=Upload Images
+m-menu.input.search=Search
+m-menu.input.checkoffer=Check all offers
+m-menu.input.regoffer=Make an offer
+m-menu.input.back-to-profile=Back to profile
