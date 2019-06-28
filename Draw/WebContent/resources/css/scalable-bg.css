@@ -1,0 +1,29 @@
+/*body  { 
+	 background: url("../images/gray-bg2.jpg") no-repeat top left fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	background-repeat: repeat;
+}
+	
+
+@media screen and (max-width: 1920px) { 
+	img.bg {
+  		left: 50%;
+  		margin-left: -960px;
+		}
+}
+
+img.bg {
+		min-height: 100%;
+		min-width: 1920px;
+		width: 100%;
+		height: auto;
+		position: fixed;
+		top: 0;
+		left: 0;
+}
+*/
