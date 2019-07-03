@@ -34,17 +34,22 @@ public class ActionController {
 			  } else if ( GF.eqIC(submitType, "login")) {
 				  String uNameOrEmail = request.getParameter("username");
 				  String password = request.getParameter("password");
-				  
+				  boolean isOk = false;
 				  if (!GF.isNullOrEmpty(uNameOrEmail) && !GF.isNullOrEmpty(password)){
 					  //if (AccountController.validatePassword(password)){
 						  SiteAccount sAccount = AccountController.verifyAccount(uNameOrEmail, AccountController.getHashedPassword(password));
 						  if (sAccount != null){
 							  sParams.setsAccount(sAccount);
+							  isOk = true;
 						  }
 					  //}
 				  }
 				  
-				  redirect = "index.jsp";
+				  if (isOk){
+					  redirect = "index.jsp";  
+				  } else {
+					  redirect = "login.jsp?error=InvalidCredentials";
+				  }
 			  } else if ( GF.eqIC(submitType, "description")) {
 				  String description = request.getParameter("description");
 				  AccountController.updateDescription(sParams, description);  

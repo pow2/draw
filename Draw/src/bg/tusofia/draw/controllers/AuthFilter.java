@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import bg.tusofia.draw.model.SessionParams;
 import bg.tusofia.draw.utils.GF;
 
 @WebFilter(filterName = "AuthFilter", urlPatterns = { "*.jsp" })
@@ -32,6 +33,8 @@ public class AuthFilter implements Filter {
 	}
 	
 	private static final String LOGIN = "/login.jsp";
+	private static final String USER_CTRL = "/userctrl.jsp";
+	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -45,22 +48,23 @@ public class AuthFilter implements Filter {
 			
 			if (reqURI.toLowerCase().contains("js-timer-check-alpha")) {
 				res.setContentType("application/json; charset=utf-8");
-				res.setStatus((ses == null || ses.getAttribute(SessionController.ATT_SPARAMS) == null) ? HttpServletResponse.SC_UNAUTHORIZED : HttpServletResponse.SC_OK);
+				
+				res.setStatus((!reqURI.contains(LOGIN) && !reqURI.contains(USER_CTRL) 
+						&& (ses == null || ses.getAttribute(SessionController.ATT_SPARAMS) == null)) ? 
+								HttpServletResponse.SC_UNAUTHORIZED : HttpServletResponse.SC_OK);
 				res.getWriter().append("{ \"auth\" : \"OK\"}");
 				return;
 			}
 			
 			String loginURL = req.getContextPath() + LOGIN;
 
-			if (reqURI.contains(LOGIN) && (ses == null || ses.getAttribute(SessionController.ATT_SPARAMS) == null) ){
+			if ( (reqURI.contains(LOGIN) || reqURI.contains(USER_CTRL)) && (ses == null || ses.getAttribute(SessionController.ATT_SPARAMS) == null || ((SessionParams)ses.getAttribute(SessionController.ATT_SPARAMS)).getsAccount() != null ) ){
 				chain.doFilter(request, response);
-			} else if (reqURI.indexOf(LOGIN) >= 0 && (ses != null && ses.getAttribute(SessionController.ATT_SPARAMS) != null)) {
-			res.sendRedirect(req.getContextPath() + LOGIN);
-				
+			} else if (reqURI.indexOf(LOGIN) >= 0 && (ses != null && ses.getAttribute(SessionController.ATT_SPARAMS) != null  && ((SessionParams)ses.getAttribute(SessionController.ATT_SPARAMS)).getsAccount() != null)) {
+				res.sendRedirect(req.getContextPath() + "/index.jsp");
 			} else if (ses != null && ses.getAttribute(SessionController.ATT_SPARAMS) != null) {
 				chain.doFilter(request, response);
 			} else {
-				
 					res.sendRedirect(loginURL);
 			}
 		} catch (Exception e) {

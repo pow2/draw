@@ -21,7 +21,24 @@
 		}
 	%>| <a href="<%=ElementsController.PROJ%>languages.jsp"><%=TLController.getTl(sParams, "footer.language")%></a>
 	| <a href="<%=ElementsController.PROJ%>about.jsp"><%=TLController.getTl(sParams, "footer.about")%></a>
-
+	<% String requestUri = request.getRequestURI();
+	if (requestUri.contains("/img-prev/img/")){
+		int idx = requestUri.indexOf("/img/");
+		requestUri = requestUri.substring(idx + 5);
+		idx = requestUri.indexOf("/");
+		if (idx != -1) {
+			String userIdfooter = requestUri.substring(0, idx);
+			String imgId = requestUri.substring(idx + 1);
+			if (sParams.getsAccount() != null && sParams.getsAccount().getUser_id() > 0) {
+				if ( sParams.getsAccount().getUser_id() == Long.parseLong(userIdfooter)){
+					%>
+	|  <a href="<%=ElementsController.PROJ%>/delete/<%= userIdfooter + "/" + imgId %>"><%=TLController.getTl(sParams, "general.remove")%></a>
+					<%
+				}
+			}
+		}
+	}
+ 	%>
 </div>
 <script type ="text/javascript" src="/Draw/resources/js/auth.js"></script>
  <audio id="hidden-player" loop>

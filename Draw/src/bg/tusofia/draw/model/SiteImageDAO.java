@@ -144,6 +144,42 @@ public class SiteImageDAO {
 		return list;
 	}
 
+	public static boolean deleteImage(String userId, String imgId){
+		
+		boolean result = false;
+		
+		Connection con = null;
+		PreparedStatement stmnt = null;
+		ResultSet rs = null;
+
+		try {
+			SiteImage img = new SiteImage();
+			img.setLongUserId(Long.parseLong(userId));
+			img.setImgId(Long.parseLong(imgId));
+
+			con = JDBCCtrl.getDatabaseConnection();
+			stmnt = con.prepareStatement("DELETE FROM kerrigan.imgtotag WHERE img_id = ?");
+			stmnt.setLong(2, img.getImgId());
+			stmnt.executeUpdate();
+			stmnt.close();
+			stmnt = con.prepareStatement("DELETE FROM kerrigan.images WHERE user_id = ? AND img_id = ?");
+			stmnt.setLong(1, img.getLongUserId());
+			stmnt.setLong(2, img.getImgId());
+			stmnt.executeUpdate();
+			con.commit();
+			result = true;
+		} catch (SQLException e) {
+			logger.error(GF.getError(e));
+			e.getStackTrace();
+		} finally {
+			JDBCCtrl.close(rs);
+			JDBCCtrl.close(stmnt);
+			JDBCCtrl.close(con);
+		}
+
+		return result;
+	}
+	
 	public static SiteImage getDrivePath(String userId, String imgId) {
 
 		SiteImage img = new SiteImage();

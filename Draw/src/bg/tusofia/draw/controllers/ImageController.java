@@ -1,10 +1,12 @@
 package bg.tusofia.draw.controllers;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
@@ -97,6 +99,10 @@ public class ImageController {
 	
 	public static String getJSArrayTags(){
 		return SiteTagsDAO.getJSArrayTags();
+	}
+	
+	public static void deleteImage(String userId, String imgId){
+		SiteImageDAO.deleteImage(userId, imgId);
 	}
 	
 	public static List<SiteImage> getNewest(HttpServletRequest request){

@@ -3,7 +3,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page trimDirectiveWhitespaces="true" %>
 <% SessionParams sParams = SessionController.loadSession(request);
-if (sParams.getsAccount() == null || sParams.getsAccount().getUser_id() < 1){
+if (sParams == null || sParams.getsAccount() == null || sParams.getsAccount().getUser_id() < 1){
 	if(!response.isCommitted()) {
 		response.sendRedirect("login.jsp");
 	}

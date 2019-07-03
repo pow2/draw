@@ -1,5 +1,5 @@
 package test;
-
+/*
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -49,7 +49,7 @@ public class TestSuite {
 	public void setMockConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection testCon = DriverManager.getConnection("jdbc:mysql://localhost:11240/Kerrigan", "XXX", "XXX");
+			Connection testCon = DriverManager.getConnection("jdbc:mysql://localhost:11240/Kerrigan", "servcontroller", "H2x25ReZ6J4K35V");
 			JDBCCtrl.setTestConnection(testCon);
 		} catch (Exception e) {
 		}
@@ -645,4 +645,4 @@ public class TestSuite {
 		return request;
 	}
 }
-
+*/

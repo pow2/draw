@@ -1,4 +1,4 @@
-<%@page import="bg.tusofia.draw.controllers.*"
+<%@page import="bg.tusofia.draw.utils.GF" import="bg.tusofia.draw.controllers.*"
 	import="bg.tusofia.draw.model.SessionParams"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -19,6 +19,9 @@
 	<div class="draw-body-wrapper font">
 		<div class="draw-reg-form-wrapper font">
 			<div class="draw-title"><%=TLController.getTl(sParams, "login.headers.title")%></div>
+			<% if (!GF.isNullOrEmpty(request.getParameter("error"))) { %>
+			<div class="draw-error"><%=request.getParameter("error")%></div>
+			<% } %>
 			<div class="draw-body">
 				<form method="POST" action="userctrl.jsp">
 					<div class="loginRow">
